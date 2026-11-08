@@ -38,7 +38,7 @@ commonmark = "0.24.0"
 
 # Testing
 junit-bom = "5.10.2"
-log4j-impl = "2.23.1" # unvulnerable version
+log4j-impl = "2.26.1" # unvulnerable version
 
 adventure = "4.25.0"
 adventure-platform = "4.4.1"
