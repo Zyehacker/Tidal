@@ -1,0 +1,25 @@
+tidal.search=Search
+tidal.search.placeholder=Search for something...
+tidal.search.nonefound=Nothing found. Try searching for something else?
+tidal.button.default=Click
+
+tidal.keybinds.none=Not bound
+tidal.keybinds.recording=Recording...
+
+tidal.align=Align
+tidal.align.start=Start
+tidal.align.center=Center
+tidal.align.end=End
+
+tidal.width=Width:
+tidal.height=Height:
+
+tidal.fweight.100=Thin
+tidal.fweight.200=Extra light
+tidal.fweight.300=Light
+tidal.fweight.400=Regular
+tidal.fweight.500=Medium
+tidal.fweight.600=Semi bold
+tidal.fweight.700=Bold
+tidal.fweight.800=Extra bold
+tidal.fweight.900=Black

@@ -1,0 +1,58 @@
+{
+  "ui.open": {
+    "sounds": [
+      "tidal:ui/open"
+    ]
+  },
+  "ui.close": {
+    "sounds": [
+      "tidal:ui/close"
+    ]
+  },
+  "ui.click": {
+    "sounds": [
+      "tidal:ui/click"
+    ]
+  },
+  "ui.slider": {
+    "sounds": [
+      "tidal:ui/slider"
+    ]
+  },
+  "ui.pad_loop": {
+    "sounds": [
+      {
+        "name": "tidal:ui/pad_loop",
+        "stream": true
+      }
+    ]
+  },
+  "ui.mc_ambient": {
+    "sounds": [
+      { "name": "tidal:ambient/trees", "stream": true },
+      { "name": "tidal:ambient/moog_1", "stream": true },
+      { "name": "tidal:ambient/moog_2", "stream": true },
+      { "name": "tidal:ambient/lullaby", "stream": true }
+    ]
+  },
+  "ui.mc_ambient.trees": {
+    "sounds": [
+      { "name": "tidal:ambient/trees", "stream": true }
+    ]
+  },
+  "ui.mc_ambient.moog_1": {
+    "sounds": [
+      { "name": "tidal:ambient/moog_1", "stream": true }
+    ]
+  },
+  "ui.mc_ambient.moog_2": {
+    "sounds": [
+      { "name": "tidal:ambient/moog_2", "stream": true }
+    ]
+  },
+  "ui.mc_ambient.lullaby": {
+    "sounds": [
+      { "name": "tidal:ambient/lullaby", "stream": true }
+    ]
+  }
+}

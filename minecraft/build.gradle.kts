@@ -1,0 +1,3 @@
+plugins {
+    `tidal-setup`
+}

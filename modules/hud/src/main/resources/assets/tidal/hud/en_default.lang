@@ -1,0 +1,43 @@
+tidal.huds.edit=Edit HUD...
+
+tidal.huds.all=All
+tidal.huds.pvp=PvP
+tidal.huds.info=World & Server
+tidal.huds.player=Player
+
+tidal.hudeditor.title=HUD Editor
+tidal.hudeditor.designer.title=Designer
+tidal.hudeditor.settings.title=Settings
+tidal.hudeditor.general.title=Component Options
+tidal.hudeditor.choosesomething=Click on an element to continue.
+tidal.hudeditor.cantedit.aslegacy=This HUD is running in legacy compatibility mode and cannot be edited.
+
+tidal.hudeditor.padding.title=ALIGNMENT & PADDING
+tidal.hudeditor.padding.info=These settings control the distance between the edge of the background and the HUD, as well as its alignment.
+tidal.hudeditor.padding.between=Pad between
+tidal.hudeditor.padding.edges=Edge padding
+tidal.hudeditor.staticwidth=Static width
+tidal.hudeditor.corner.radius=Corner radius
+
+tidal.hudeditor.color.title=COLORS
+tidal.hudeditor.color.info=These settings control the color of the HUD element.
+tidal.hudeditor.bg.color.info=These settings control the color of the background.
+
+tidal.hudeditor.component.title=Component settings
+tidal.hudeditor.component.info=These settings control the size and alignment of the component.
+tidal.hudeditor.component.notimplemented=Unfortunately, this component is not currently supported by the HUD editor.\nIf you are a developer, please contact Tidal for more information.
+
+tidal.hudeditor.color.fill=Fill color
+tidal.hudeditor.color.border=Border color
+
+tidal.hudeditor.opacity=Opacity
+tidal.hudeditor.rotation=Rotation
+tidal.hudeditor.radii=Corner radius
+tidal.hudeditor.skew=Skew
+
+tidal.hudeditor.text.title=TEXT OPTIONS
+tidal.hudeditor.text.example=The quick brown fox jumps over the lazy dog
+tidal.hudeditor.text.size=Font size
+tidal.hudeditor.text.weight=Weight
+tidal.hudeditor.text.font=Font
+tidal.hudeditor.text.effects=Case type

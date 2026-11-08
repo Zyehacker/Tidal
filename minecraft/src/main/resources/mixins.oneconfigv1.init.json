@@ -1,0 +1,8 @@
+{
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "package": "cc.tidal.tidal.internal.mixin.init",
+  "plugin": "cc.tidal.tidal.internal.TidalEarlyMixinInit",
+  "verbose": true,
+  "target": "@env(INIT)"
+}

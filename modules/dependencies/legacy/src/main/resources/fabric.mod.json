@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "tidal-deps",
+  "name": "Tidal Dependencies",
+  "version": "${version}",
+  "description": "Fake Fabric mod JSON for Legacy Forge mods",
+  "authors": [
+    "Tidal"
+  ],
+  "contact": {
+    "homepage": "https://tidal.org",
+    "sources": "https://github.com/Tidal/Tidal",
+    "issues": "https://inv.wtf/tidal"
+  },
+  "license": "LGPL-3.0",
+  "environment": "client",
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ]
+    }
+  }
+}

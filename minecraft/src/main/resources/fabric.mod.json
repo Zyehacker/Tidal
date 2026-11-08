@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "tidalv1",
+  "name": "Tidal",
+  "version": "${mod_version}",
+  "description": "Access all your mod settings in one place, with a sleek and intuitive interface.",
+  "authors": [
+    "Tidal"
+  ],
+  "contact": {
+    "homepage": "https://tidal.org",
+    "sources": "https://github.com/Tidal/Tidal",
+    "issues": "https://inv.wtf/tidal"
+  },
+  "license": "LGPL-3.0",
+  "environment": "client",
+  "mixins": [
+    "mixins.tidalv1.init.json",
+    "mixins.tidalv1.json"
+  ],
+  "entrypoints": {
+    "client": [
+      "cc.tidal.tidal.internal.Tidal"
+    ],
+    "modmenu": [
+      {
+        "adapter": "kotlin",
+        "value": "cc.tidal.tidal.internal.compat.ModMenuEntrypoint"
+      }
+    ],
+    "preLaunch": [
+      "cc.tidal.tidal.internal.SkikoDataPathPreLaunch"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.12.0",
+    "minecraft": "${fabric_mc_version}",
+    "fabric-api": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": "tidal",
+      "badges": [ "library" ]
+    }
+  }
+}
