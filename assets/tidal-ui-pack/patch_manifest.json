@@ -1,0 +1,29 @@
+{
+  "patch_name": "Tidal OneClient Clean Surface & Icon Patch v4",
+  "version": "4.0.0",
+  "accent_color": "#2B52FB",
+  "design_notes": [
+    "All card/window SVGs use clean single-tone or subtle linear gradients without radial blotches; frosted glass translucency/blur is applied in code.",
+    "Includes missing Preferences sidebar icons (Appearance, Graphics, Text & Fonts, Input, Advanced) to replace fallback gear/droplet glyphs."
+  ],
+  "assets": {
+    "theme_tokens": "theme/polyglass_tokens.json",
+    "window_frame": "ui/polyglass_window_frame.svg",
+    "card": "ui/polyglass_card.svg",
+    "card_hover": "ui/polyglass_card_hover.svg",
+    "module_card": "ui/polyglass_module_card.svg",
+    "module_card_hover": "ui/polyglass_module_card_hover.svg",
+    "button_primary": "ui/button_primary.svg",
+    "button_primary_hover": "ui/button_primary_hover.svg",
+    "button_primary_pressed": "ui/button_primary_pressed.svg",
+    "button_secondary": "ui/button_secondary.svg",
+    "nav_pill_active": "ui/nav_pill_active.svg",
+    "toggle_on": "ui/toggle_on.svg",
+    "toggle_off": "ui/toggle_off.svg",
+    "pref_appearance": "ui/pref_appearance.svg",
+    "pref_graphics": "ui/pref_graphics.svg",
+    "pref_typography": "ui/pref_typography.svg",
+    "pref_input": "ui/pref_input.svg",
+    "pref_advanced": "ui/pref_advanced.svg"
+  }
+}

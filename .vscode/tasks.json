@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Launch Tidal 26.2 client",
+			"type": "shell",
+			"command": ".\\gradlew.bat",
+			"args": [
+				":fabric:26.2:runClient",
+				"--configure-on-demand"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

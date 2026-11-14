@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "tidal",
+  "version": "1.0.0-beta",
+  "name": "Tidal",
+  "authors": [
+    "Zye",
+    "Graphine Studios",
+    "CrafterStudioIndia",
+    "ILMaRkz-Y"
+  ],
+  "license": "LicenseRef-Tidal-Proprietary-View-Only",
+  "icon": "assets/tidal/textures/gui/liquid-glass/tidal/brand/logo.png",
+  "description": "Tidal mod scaffold.",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "cc.tidal.tidal.Tidal"
+    ],
+    "client": [
+      "cc.tidal.tidal.TidalClient"
+    ]
+  },
+  "mixins": [
+    "tidal.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "26.3",
+    "fabric-api": "*",
+    "java": ">=21"
+  }
+}

@@ -1,0 +1,1521 @@
+{
+    "pack":  "Tidal Glass",
+    "version":  "2.0.0",
+    "schema":  "tidal-asset-manifest/3",
+    "units":  "logical px",
+    "count":  84,
+    "assets":  [
+                   {
+                       "file":  "icons/modules/left_cps.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/right_cps.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/combined_cps.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/keystrokes.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/armor_status.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/armor_durability.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/totem_counter.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/arrow_counter.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/potion_effects.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/potion_timers.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/health.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/hunger.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/saturation.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/combined_hunger.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/absorption.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/xp_level.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/coordinates.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/direction.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/yaw_pitch.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/movement_speed.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/biome.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/dimension.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/ingame_clock.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/realworld_clock.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/day_counter.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/fps.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/frame_time.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/ping.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/memory_usage.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/session_timer.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/server_address.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/player_count.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/held_item.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/item_durability.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/compass.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/resource_pack.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/toggle_sprint.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/toggle_sneak.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/zoom.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/fullbright.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/view_bobbing.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/modules/custom_crosshair.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/nav_modules.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/nav_hud_editor.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/nav_visuals.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/nav_keybinds.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/nav_settings.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/search.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/close.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/chevron_left.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/chevron_right.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/chevron_up.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/chevron_down.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/check.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/plus.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/minus.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/reset.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/eye.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/eye_off.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/drag_handle.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/resize.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/color.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/group.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/grid_snap.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/info.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "icons/ui/star.svg",
+                       "dimensions":  "24x24",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/button_default.svg",
+                       "dimensions":  "96x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/button_hover.svg",
+                       "dimensions":  "96x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/button_pressed.svg",
+                       "dimensions":  "96x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/button_disabled.svg",
+                       "dimensions":  "96x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/button_accent.svg",
+                       "dimensions":  "96x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/toggle_off.svg",
+                       "dimensions":  "40x22",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/toggle_on.svg",
+                       "dimensions":  "40x22",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/slider_track.svg",
+                       "dimensions":  "64x4",
+                       "nineSlice":  {
+                                         "left":  2,
+                                         "top":  0,
+                                         "right":  2,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice-x",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/slider_fill.svg",
+                       "dimensions":  "64x4",
+                       "nineSlice":  {
+                                         "left":  2,
+                                         "top":  0,
+                                         "right":  2,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice-x",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/slider_thumb.svg",
+                       "dimensions":  "16x16",
+                       "nineSlice":  {
+                                         "left":  0,
+                                         "top":  0,
+                                         "right":  0,
+                                         "bottom":  0
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "stretch",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/panel.svg",
+                       "dimensions":  "64x64",
+                       "nineSlice":  {
+                                         "left":  16,
+                                         "top":  16,
+                                         "right":  16,
+                                         "bottom":  16
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/card_default.svg",
+                       "dimensions":  "160x64",
+                       "nineSlice":  {
+                                         "left":  12,
+                                         "top":  12,
+                                         "right":  12,
+                                         "bottom":  12
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/card_hover.svg",
+                       "dimensions":  "160x64",
+                       "nineSlice":  {
+                                         "left":  12,
+                                         "top":  12,
+                                         "right":  12,
+                                         "bottom":  12
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/card_enabled.svg",
+                       "dimensions":  "160x64",
+                       "nineSlice":  {
+                                         "left":  12,
+                                         "top":  12,
+                                         "right":  12,
+                                         "bottom":  12
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/field_default.svg",
+                       "dimensions":  "160x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/field_focus.svg",
+                       "dimensions":  "160x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/tab_active.svg",
+                       "dimensions":  "88x32",
+                       "nineSlice":  {
+                                         "left":  10,
+                                         "top":  10,
+                                         "right":  10,
+                                         "bottom":  10
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   },
+                   {
+                       "file":  "components/tooltip.svg",
+                       "dimensions":  "64x28",
+                       "nineSlice":  {
+                                         "left":  8,
+                                         "top":  8,
+                                         "right":  8,
+                                         "bottom":  8
+                                     },
+                       "safeArea":  {
+                                        "left":  0,
+                                        "top":  0,
+                                        "right":  0,
+                                        "bottom":  0
+                                    },
+                       "scaling":  "nine-slice",
+                       "tint":  true
+                   }
+               ]
+}

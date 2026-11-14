@@ -1,0 +1,442 @@
+{
+  "pack_name": "Tidal PolyGlass SVG Pack",
+  "version": "2.0.0",
+  "design_spec": "Tidal / PolyGlass Dark",
+  "icon_grid": "24x24px stroke=1.85px round-cap",
+  "counts": {
+    "total_implemented_modules": 40,
+    "hud_elements": 34,
+    "gameplay_modules": 6,
+    "ui_assets": 43,
+    "filtered_unimplemented_count": 44
+  },
+  "hud_editor_capabilities": {
+    "toggle_key": "H",
+    "supports_drag_resize": true,
+    "supports_scale": true,
+    "supports_recolor": true,
+    "supports_merged_surface_groups": true,
+    "persists_in_config": true
+  },
+  "filtering_policy": {
+    "exclude_unimplemented": true,
+    "note": "Coming soon module entries are excluded from the active UI registry.",
+    "sample_excluded": [
+      "Mouse Trail",
+      "Combo Counter",
+      "Entity Counter",
+      "FPS Graph",
+      "Inventory Sorting",
+      "Screenshot Manager",
+      "Keybind Manager"
+    ]
+  },
+  "theme_tokens": "theme/polyglass_tokens.json",
+  "ui_assets": {
+    "polyglass_window_frame": "ui/polyglass_window_frame.svg",
+    "polyglass_card": "ui/polyglass_card.svg",
+    "polyglass_card_hover": "ui/polyglass_card_hover.svg",
+    "polyglass_module_card": "ui/polyglass_module_card.svg",
+    "polyglass_module_card_hover": "ui/polyglass_module_card_hover.svg",
+    "polyglass_hud_studio_drawer": "ui/polyglass_hud_studio_drawer.svg",
+    "button_primary": "ui/button_primary.svg",
+    "button_primary_hover": "ui/button_primary_hover.svg",
+    "button_primary_pressed": "ui/button_primary_pressed.svg",
+    "button_secondary": "ui/button_secondary.svg",
+    "nav_pill_active": "ui/nav_pill_active.svg",
+    "toggle_on": "ui/toggle_on.svg",
+    "toggle_off": "ui/toggle_off.svg",
+    "nav_edit_hud": "ui/nav_edit_hud.svg",
+    "nav_mods": "ui/nav_mods.svg",
+    "nav_profiles": "ui/nav_profiles.svg",
+    "nav_keybinds": "ui/nav_keybinds.svg",
+    "nav_themes": "ui/nav_themes.svg",
+    "nav_preferences": "ui/nav_preferences.svg",
+    "search": "ui/search.svg",
+    "close": "ui/close.svg",
+    "arrow_back": "ui/arrow_back.svg",
+    "arrow_forward": "ui/arrow_forward.svg",
+    "chevron_down": "ui/chevron_down.svg",
+    "settings_gear": "ui/settings_gear.svg",
+    "hud_lock": "ui/hud_lock.svg",
+    "hud_group_merge": "ui/hud_group_merge.svg",
+    "hud_reset": "ui/hud_reset.svg",
+    "pref_appearance": "ui/pref_appearance.svg",
+    "pref_graphics": "ui/pref_graphics.svg",
+    "pref_typography": "ui/pref_typography.svg",
+    "pref_input": "ui/pref_input.svg",
+    "pref_advanced": "ui/pref_advanced.svg",
+    "action_back": "actions/back.svg",
+    "action_configure": "actions/configure.svg",
+    "action_copy": "actions/copy.svg",
+    "action_favorite_add": "actions/favorite_add.svg",
+    "action_favorite_remove": "actions/favorite_remove.svg",
+    "action_folder_open": "actions/folder_open.svg",
+    "action_liquid_glass_gallery": "actions/liquid_glass_gallery.svg",
+    "action_project_page": "actions/project_page.svg",
+    "action_restore_defaults": "actions/restore_defaults.svg",
+    "fps_boost": "modules/gameplay/fps_boost.svg"
+  },
+  "modules": [
+    {
+      "id": "cps",
+      "name": "CPS",
+      "type": "hud",
+      "category": "Input / CPS",
+      "description": "Displays both Left and Right CPS side by side.",
+      "implemented": true,
+      "icon": "modules/hud/cps.svg"
+    },
+    {
+      "id": "keystrokes",
+      "name": "Keystrokes",
+      "type": "hud",
+      "category": "Input / CPS",
+      "description": "Real-time WASD, Space, and mouse button overlay.",
+      "implemented": true,
+      "icon": "modules/hud/keystrokes.svg"
+    },
+    {
+      "id": "armor_status",
+      "name": "Armor Status",
+      "type": "hud",
+      "category": "Combat",
+      "description": "Renders equipped helmet, chestplate, leggings, and boots.",
+      "implemented": true,
+      "icon": "modules/hud/armor_status.svg"
+    },
+    {
+      "id": "armor_durability",
+      "name": "Armor Durability",
+      "type": "hud",
+      "category": "Combat",
+      "description": "Shows numeric or percentage durability for equipped armor.",
+      "implemented": true,
+      "icon": "modules/hud/armor_durability.svg"
+    },
+    {
+      "id": "totem_counter",
+      "name": "Totem Counter",
+      "type": "hud",
+      "category": "Combat",
+      "description": "Counts Totems of Undying across inventory and offhand.",
+      "implemented": true,
+      "icon": "modules/hud/totem_counter.svg"
+    },
+    {
+      "id": "arrow_counter",
+      "name": "Arrow Counter",
+      "type": "hud",
+      "category": "Combat",
+      "description": "Tracks total arrows remaining in your inventory.",
+      "implemented": true,
+      "icon": "modules/hud/arrow_counter.svg"
+    },
+    {
+      "id": "potion_effects",
+      "name": "Potion Effects",
+      "type": "hud",
+      "category": "Combat",
+      "description": "Displays active status effect icons and amplifier levels.",
+      "implemented": true,
+      "icon": "modules/hud/potion_effects.svg"
+    },
+    {
+      "id": "potion_timers",
+      "name": "Potion Timers",
+      "type": "hud",
+      "category": "Combat",
+      "description": "Displays countdown durations for active potion effects.",
+      "implemented": true,
+      "icon": "modules/hud/potion_timers.svg"
+    },
+    {
+      "id": "health",
+      "name": "Health",
+      "type": "hud",
+      "category": "Player",
+      "description": "Displays player HP value and heart indicator.",
+      "implemented": true,
+      "icon": "modules/hud/health.svg"
+    },
+    {
+      "id": "hunger",
+      "name": "Hunger",
+      "type": "hud",
+      "category": "Player",
+      "description": "Displays current food saturation bar value.",
+      "implemented": true,
+      "icon": "modules/hud/hunger.svg"
+    },
+    {
+      "id": "saturation",
+      "name": "Saturation",
+      "type": "hud",
+      "category": "Player",
+      "description": "Displays hidden saturation reserve level.",
+      "implemented": true,
+      "icon": "modules/hud/saturation.svg"
+    },
+    {
+      "id": "combined_hunger",
+      "name": "Combined Hunger",
+      "type": "hud",
+      "category": "Player",
+      "description": "Combines Hunger and Saturation readouts into one module.",
+      "implemented": true,
+      "icon": "modules/hud/combined_hunger.svg"
+    },
+    {
+      "id": "absorption",
+      "name": "Absorption",
+      "type": "hud",
+      "category": "Player",
+      "description": "Tracks golden absorption hearts separately.",
+      "implemented": true,
+      "icon": "modules/hud/absorption.svg"
+    },
+    {
+      "id": "xp_level",
+      "name": "XP Level",
+      "type": "hud",
+      "category": "Player",
+      "description": "Shows experience level and progress percentage.",
+      "implemented": true,
+      "icon": "modules/hud/xp_level.svg"
+    },
+    {
+      "id": "coordinates",
+      "name": "Coordinates",
+      "type": "hud",
+      "category": "Position",
+      "description": "Displays live X, Y, Z world coordinates.",
+      "implemented": true,
+      "icon": "modules/hud/coordinates.svg"
+    },
+    {
+      "id": "direction",
+      "name": "Direction",
+      "type": "hud",
+      "category": "Position",
+      "description": "Shows cardinal and intercardinal facing direction (N/NE/E...).",
+      "implemented": true,
+      "icon": "modules/hud/direction.svg"
+    },
+    {
+      "id": "yaw_pitch",
+      "name": "Yaw/Pitch",
+      "type": "hud",
+      "category": "Position",
+      "description": "Displays exact camera yaw and pitch rotation angles.",
+      "implemented": true,
+      "icon": "modules/hud/yaw_pitch.svg"
+    },
+    {
+      "id": "movement_speed",
+      "name": "Movement Speed",
+      "type": "hud",
+      "category": "Position",
+      "description": "Calculates player velocity in blocks per second (b/s).",
+      "implemented": true,
+      "icon": "modules/hud/movement_speed.svg"
+    },
+    {
+      "id": "biome",
+      "name": "Biome",
+      "type": "hud",
+      "category": "Position",
+      "description": "Displays the name of the current Minecraft biome.",
+      "implemented": true,
+      "icon": "modules/hud/biome.svg"
+    },
+    {
+      "id": "dimension",
+      "name": "Dimension",
+      "type": "hud",
+      "category": "Position",
+      "description": "Shows Overworld, The Nether, or The End status.",
+      "implemented": true,
+      "icon": "modules/hud/dimension.svg"
+    },
+    {
+      "id": "in_game_clock",
+      "name": "In-game Clock",
+      "type": "hud",
+      "category": "Time",
+      "description": "Displays current Minecraft world time (24h/12h).",
+      "implemented": true,
+      "icon": "modules/hud/in_game_clock.svg"
+    },
+    {
+      "id": "real_world_clock",
+      "name": "Real-world Clock",
+      "type": "hud",
+      "category": "Time",
+      "description": "Displays your local system clock on the HUD.",
+      "implemented": true,
+      "icon": "modules/hud/real_world_clock.svg"
+    },
+    {
+      "id": "day_counter",
+      "name": "Day Counter",
+      "type": "hud",
+      "category": "Time",
+      "description": "Displays total elapsed Minecraft days in the world.",
+      "implemented": true,
+      "icon": "modules/hud/day_counter.svg"
+    },
+    {
+      "id": "fps",
+      "name": "FPS",
+      "type": "hud",
+      "category": "Performance",
+      "description": "Real-time frames per second counter.",
+      "implemented": true,
+      "icon": "modules/hud/fps.svg"
+    },
+    {
+      "id": "frame_time",
+      "name": "Frame Time",
+      "type": "hud",
+      "category": "Performance",
+      "description": "Displays frame render latency in milliseconds (ms).",
+      "implemented": true,
+      "icon": "modules/hud/frame_time.svg"
+    },
+    {
+      "id": "ping",
+      "name": "Ping",
+      "type": "hud",
+      "category": "Performance",
+      "description": "Shows multiplayer server latency in milliseconds.",
+      "implemented": true,
+      "icon": "modules/hud/ping.svg"
+    },
+    {
+      "id": "memory_usage",
+      "name": "Memory Usage",
+      "type": "hud",
+      "category": "Performance",
+      "description": "Displays JVM allocated and used RAM percentage.",
+      "implemented": true,
+      "icon": "modules/hud/memory_usage.svg"
+    },
+    {
+      "id": "session_timer",
+      "name": "Session Timer",
+      "type": "hud",
+      "category": "Performance",
+      "description": "Tracks active play session duration since launch.",
+      "implemented": true,
+      "icon": "modules/hud/session_timer.svg"
+    },
+    {
+      "id": "server_address",
+      "name": "Server Address",
+      "type": "hud",
+      "category": "Server / World",
+      "description": "Displays connected multiplayer server IP or domain.",
+      "implemented": true,
+      "icon": "modules/hud/server_address.svg"
+    },
+    {
+      "id": "player_count",
+      "name": "Player Count",
+      "type": "hud",
+      "category": "Server / World",
+      "description": "Displays online players on the current server.",
+      "implemented": true,
+      "icon": "modules/hud/player_count.svg"
+    },
+    {
+      "id": "held_item",
+      "name": "Held Item",
+      "type": "hud",
+      "category": "Items / Misc",
+      "description": "Displays name and count of the currently held item.",
+      "implemented": true,
+      "icon": "modules/hud/held_item.svg"
+    },
+    {
+      "id": "item_durability",
+      "name": "Item Durability",
+      "type": "hud",
+      "category": "Items / Misc",
+      "description": "Displays remaining uses on your held tool or weapon.",
+      "implemented": true,
+      "icon": "modules/hud/item_durability.svg"
+    },
+    {
+      "id": "compass",
+      "name": "Compass",
+      "type": "hud",
+      "category": "Items / Misc",
+      "description": "Horizontal scrolling bossbar-style directional tape.",
+      "implemented": true,
+      "icon": "modules/hud/compass.svg"
+    },
+    {
+      "id": "resource_pack_display",
+      "name": "Resource Pack Display",
+      "type": "hud",
+      "category": "Items / Misc",
+      "description": "Displays active resource pack icon and title.",
+      "implemented": true,
+      "icon": "modules/hud/resource_pack_display.svg"
+    },
+    {
+      "id": "toggle_sprint",
+      "name": "Toggle Sprint",
+      "type": "gameplay",
+      "category": "Movement",
+      "description": "Holds sprint on automatically without holding the sprint key.",
+      "implemented": true,
+      "icon": "modules/gameplay/toggle_sprint.svg"
+    },
+    {
+      "id": "toggle_sneak",
+      "name": "Toggle Sneak",
+      "type": "gameplay",
+      "category": "Movement",
+      "description": "Holds sneak on automatically without holding the sneak key.",
+      "implemented": true,
+      "icon": "modules/gameplay/toggle_sneak.svg"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "type": "gameplay",
+      "category": "Movement",
+      "description": "Key-triggered smooth cinematic zoom (intensity 35 default).",
+      "implemented": true,
+      "icon": "modules/gameplay/zoom.svg"
+    },
+    {
+      "id": "fullbright",
+      "name": "Fullbright",
+      "type": "gameplay",
+      "category": "Visual",
+      "description": "Removes darkness and boosts gamma for full cave visibility.",
+      "implemented": true,
+      "icon": "modules/gameplay/fullbright.svg"
+    },
+    {
+      "id": "view_bobbing",
+      "name": "View Bobbing",
+      "type": "gameplay",
+      "category": "Visual",
+      "description": "Disables camera view bobbing while enabled.",
+      "implemented": true,
+      "icon": "modules/gameplay/view_bobbing.svg"
+    },
+    {
+      "id": "custom_crosshair",
+      "name": "Custom Crosshair",
+      "type": "gameplay",
+      "category": "Visual",
+      "description": "Replaces the vanilla crosshair with customizable geometry.",
+      "implemented": true,
+      "icon": "modules/gameplay/custom_crosshair.svg"
+    }
+  ]
+}

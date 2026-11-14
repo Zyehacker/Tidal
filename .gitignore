@@ -1,0 +1,78 @@
+# Gradle and generated build output
+.gradle/
+**/.gradle/
+build/
+**/build/
+out/
+target/
+dist/
+**/dist/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+node_modules/
+**/node_modules/
+
+# Local game data, caches, logs, and crash reports
+**/run/
+.cache/
+**/.cache/
+logs/
+**/logs/
+crash-reports/
+**/crash-reports/
+*.log
+
+# IDE metadata and local workspace state
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+# Temporary files and operating-system metadata
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local profiling and diagnostic output
+profiling/
+**/profiling/
+*.jfr
+*.hprof
+*.prof
+*.trace
+
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials.*
+local.properties
+**/local.properties
+
+# Keep maintained project documentation; ignore other Markdown files
+**/*.md
+!/README.md
+!/CREDITS.md
+!/CONTRIBUTING.md
+!/fabric/26.2/README.md
+!/fabric/26.2/cef/THIRD_PARTY_NOTICES.md

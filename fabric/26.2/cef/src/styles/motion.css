@@ -1,0 +1,45 @@
+/*
+ * tidal — proprietary source-viewing license
+ * maintained by graphine studios
+ * see LICENSE and CREDITS.md for licensing and attribution.
+ *
+ * provided here for inspection only.
+ * this notice does not claim ownership of other contributors' material.
+ * no general permission is granted by graphine studios to reuse, copy,
+ * modify, redistribute or create derivative works from this file.
+ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-content {
+    animation: page-in 150ms var(--ease-out) both;
+    will-change: transform, opacity;
+  }
+}
+
+.app--no-motion *,
+.app--no-motion *::before,
+.app--no-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

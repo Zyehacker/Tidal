@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 812 64" width="812" height="64" fill="none">
+  <defs>
+    <linearGradient id="rowSmooth" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1B1F2A"/>
+      <stop offset="100%" stop-color="#161922"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="811" height="63" rx="8" fill="url(#rowSmooth)" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+</svg>

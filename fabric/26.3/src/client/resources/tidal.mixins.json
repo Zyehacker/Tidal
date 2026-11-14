@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "cc.tidal.tidal.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "LightmapRenderStateExtractorMixin",
+    "TidalFontTextureMixin",
+    "TidalMouseInputMixin",
+    "TidalCameraZoomMixin",
+    "KeyMappingAccessor",
+    "TidalTextureSamplerAccessor",
+    "TidalLevelLoadingScreenAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

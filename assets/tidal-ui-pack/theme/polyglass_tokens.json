@@ -1,0 +1,29 @@
+{
+  "theme": "OneClient PolyGlass Dark (Clean Surfaces v4)",
+  "colors": {
+    "window_bg": "#11141C",
+    "window_bg_translucent": "rgba(17, 20, 28, 0.88)",
+    "sidebar_bg": "#0B0D12",
+    "sidebar_bg_translucent": "rgba(11, 13, 18, 0.94)",
+    "card_bg": "#181B24",
+    "card_bg_hover": "#1E222E",
+    "control_bg": "#232836",
+    "border_hairline": "rgba(255, 255, 255, 0.08)",
+    "border_top_highlight": "rgba(255, 255, 255, 0.14)",
+    "accent": "#2B52FB",
+    "accent_hover": "#3B60FF",
+    "accent_pressed": "#2243D6",
+    "text_primary": "#F3F5F9",
+    "text_secondary": "#8D95A5",
+    "text_muted": "#596070",
+    "toggle_off": "#2C3140",
+    "toggle_on": "#2B52FB"
+  },
+  "radii": {
+    "window": 14,
+    "card": 8,
+    "button": 8,
+    "pill": 6,
+    "toggle": 999
+  }
+}

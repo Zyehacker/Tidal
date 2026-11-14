@@ -1,0 +1,41 @@
+/*
+ * tidal — proprietary source-viewing license
+ * maintained by graphine studios
+ * see LICENSE and CREDITS.md for licensing and attribution.
+ *
+ * provided here for inspection only.
+ * this notice does not claim ownership of other contributors' material.
+ * no general permission is granted by graphine studios to reuse, copy,
+ * modify, redistribute or create derivative works from this file.
+ */
+
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f2f5fa;
+  background: transparent;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-bg: #08090b;
+  --color-surface: #101114;
+  --color-elevated: #17191d;
+  --color-interactive: #1b1e23;
+  --color-hover: #20242b;
+  --color-border: #282b31;
+  --color-primary: #f3f5f8;
+  --color-secondary: #9aa2ad;
+  --color-muted: #6d7480;
+  --color-accent: #3b82f6;
+  --color-success: #73d6a0;
+  --color-warning: #e8a33d;
+  --color-error: #e5484d;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-control: 8px;
+  --radius-card: 11px;
+  --radius-panel: 14px;
+  --ease-out: cubic-bezier(0.2, 0.75, 0.25, 1);
+}

@@ -1,0 +1,89 @@
+/*
+ * tidal — proprietary source-viewing license
+ * maintained by graphine studios
+ * see LICENSE and CREDITS.md for licensing and attribution.
+ *
+ * provided here for inspection only.
+ * this notice does not claim ownership of other contributors' material.
+ * no general permission is granted by graphine studios to reuse, copy,
+ * modify, redistribute or create derivative works from this file.
+ */
+
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+version = '1.0.0-beta'
+group = 'cc.tidal'
+base {
+    archivesName = 'tidal-26.2'
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        tidal {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${mc_26_2}"
+    clientImplementation "net.fabricmc:fabric-loader:${loader_26_2}"
+    clientImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_26_2}"
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+tasks.named('runClient') {
+    jvmArgs '--enable-native-access=ALL-UNNAMED'
+    if (org.gradle.internal.os.OperatingSystem.current().isMacOsX()) {
+        jvmArgs '--add-opens=java.desktop/sun.awt=ALL-UNNAMED',
+                '--add-opens=java.desktop/sun.lwawt=ALL-UNNAMED',
+                '--add-opens=java.desktop/sun.lwawt.macosx=ALL-UNNAMED'
+    }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+    withSourcesJar()
+}
+
+sourceSets {
+    client {
+        java {
+            exclude 'cc/tidal/tidal/TidalCef*.java', 'org/cef/**'
+        }
+    }
+    liquidGlassTest {
+        java.srcDir 'src/clientTest/java'
+        compileClasspath += sourceSets.client.output + sourceSets.client.compileClasspath
+        runtimeClasspath += sourceSets.client.output + sourceSets.client.runtimeClasspath
+    }
+}
+
+configurations {
+    liquidGlassTestImplementation.extendsFrom clientImplementation
+    liquidGlassTestRuntimeOnly.extendsFrom clientRuntimeOnly
+}
+
+tasks.register('verifyLiquidGlassAssets', JavaExec) {
+    dependsOn tasks.named('clientClasses'), tasks.named('liquidGlassTestClasses')
+    classpath = sourceSets.liquidGlassTest.runtimeClasspath
+    mainClass.set('cc.tidal.tidal.LiquidGlassAssetVerifier')
+    jvmArgs '-Djava.awt.headless=true', '--enable-native-access=ALL-UNNAMED'
+}
+
+tasks.named('check') {
+    dependsOn tasks.named('verifyLiquidGlassAssets')
+}

@@ -1,0 +1,22 @@
+/*
+ * tidal — proprietary source-viewing license
+ * maintained by graphine studios
+ * see LICENSE and CREDITS.md for licensing and attribution.
+ *
+ * provided here for inspection only.
+ * this notice does not claim ownership of other contributors' material.
+ * no general permission is granted by graphine studios to reuse, copy,
+ * modify, redistribute or create derivative works from this file.
+ */
+
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'Tidal'
+
+include 'fabric:26.2', 'fabric:26.3', 'fabric:1.21.11'

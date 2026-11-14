@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 680" width="1080" height="680" fill="none">
+  <defs>
+    <linearGradient id="winSmoothGrad" x1="0" y1="0" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#141822"/>
+      <stop offset="100%" stop-color="#0F1219"/>
+    </linearGradient>
+    <linearGradient id="sideSmoothGrad" x1="0" y1="0" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0D1017"/>
+      <stop offset="100%" stop-color="#090B10"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="1079" height="679" rx="14" fill="url(#winSmoothGrad)"/>
+  <path d="M1 14C1 6.8203 6.8203 1 14 1H216V679H14C6.8203 679 1 673.18 1 666V14Z" fill="url(#sideSmoothGrad)"/>
+  <line x1="216" y1="1" x2="216" y2="679" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1"/>
+  <line x1="216" y1="62" x2="1079" y2="62" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="1079" height="679" rx="14" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="1"/>
+</svg>

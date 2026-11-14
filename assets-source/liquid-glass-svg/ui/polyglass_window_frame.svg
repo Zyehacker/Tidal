@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 680" width="1080" height="680" fill="none">
+  <defs>
+    <linearGradient id="pgWindowBg" x1="0" y1="0" x2="1080" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#141720" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0E1016" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="pgSidebarBg" x1="0" y1="0" x2="0" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0C0E13" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#090B0F" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="pgTopEdge" x1="0" y1="0" x2="1080" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="50%" stop-color="#385BFF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="pgShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+  <!-- Main Glass Container -->
+  <rect x="1" y="1" width="1078" height="678" rx="14" fill="url(#pgWindowBg)" stroke="url(#pgTopEdge)" stroke-width="1.2"/>
+  <!-- Left Navigation Rail -->
+  <path d="M1 15C1 7.26801 7.26801 1 15 1H220V679H15C7.26801 679 1 672.732 1 665V15Z" fill="url(#pgSidebarBg)"/>
+  <!-- Sidebar Divider -->
+  <line x1="220" y1="1" x2="220" y2="679" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1"/>
+  <!-- Header Bottom Hairline -->
+  <line x1="220" y1="68" x2="1079" y2="68" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <!-- Profile Footer Divider -->
+  <line x1="16" y1="612" x2="204" y2="612" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1"/>
+</svg>

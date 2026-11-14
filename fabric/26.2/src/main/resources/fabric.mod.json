@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "tidal",
+  "version": "${version}",
+  "name": "Tidal",
+  "authors": [
+    "Zye",
+    "Graphine Studios",
+    "CrafterStudioIndia",
+    "ILMaRkz-Y"
+  ],
+  "license": "LicenseRef-Tidal-Proprietary-View-Only",
+  "icon": "assets/tidal/textures/gui/liquid-glass/tidal/brand/logo.png",
+  "description": "A minimal, customizable client interface and HUD.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "cc.tidal.tidal.TidalClient"
+    ]
+  },
+  "mixins": [
+    "tidal.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "26.2",
+    "java": ">=25"
+  }
+}

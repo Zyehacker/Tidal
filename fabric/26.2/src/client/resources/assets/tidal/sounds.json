@@ -1,0 +1,26 @@
+{
+  "ui.click": {
+    "sounds": [
+      {
+        "name": "tidal:click",
+        "stream": false
+      }
+    ]
+  },
+  "ui.notification": {
+    "sounds": [
+      {
+        "name": "tidal:notification",
+        "stream": false
+      }
+    ]
+  },
+  "ui.ambient": {
+    "sounds": [
+      {
+        "name": "tidal:ambient",
+        "stream": true
+      }
+    ]
+  }
+}

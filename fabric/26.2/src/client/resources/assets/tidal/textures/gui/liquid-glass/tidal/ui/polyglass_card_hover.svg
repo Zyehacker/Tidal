@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120" fill="none">
+  <defs>
+    <linearGradient id="cardHoverSmooth" x1="0" y1="0" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#212634"/>
+      <stop offset="100%" stop-color="#1B1F2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="399" height="119" rx="8" fill="url(#cardHoverSmooth)" stroke="#2B52FB" stroke-opacity="0.60" stroke-width="1"/>
+</svg>

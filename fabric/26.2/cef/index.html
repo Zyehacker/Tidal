@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+ * tidal — proprietary source-viewing license
+ * maintained by graphine studios
+ * see LICENSE and CREDITS.md for licensing and attribution.
+ *
+ * provided here for inspection only.
+ * this notice does not claim ownership of other contributors' material.
+ * no general permission is granted by graphine studios to reuse, copy,
+ * modify, redistribute or create derivative works from this file.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Tidal</title>
+    <style>
+      html,
+      body,
+      #root {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: #090b10;
+      }
+      #tidal-loading {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        place-items: center;
+        color: #aab5c5;
+        font: 14px/1.4 system-ui, sans-serif;
+      }
+    </style>
+    <script>
+      window.onerror = function (message, source, line, column, error) {
+        console.error("window.onerror:", message, source + ":" + line + ":" + column, error);
+        return false;
+      };
+
+      window.addEventListener("unhandledrejection", function (event) {
+        console.error("Unhandled promise rejection:", event.reason);
+      });
+
+      (function () {
+        window.addEventListener("keydown", function (event) {
+          if (event.key !== "Escape") return;
+          queueMicrotask(function () {
+            if (event.defaultPrevented || event.cancelBubble) return;
+            if (typeof window.cefQuery !== "function") {
+              console.error("Tidal Escape bridge is unavailable.");
+              return;
+            }
+            window.cefQuery({
+              request: JSON.stringify({ type: "escape" }),
+              onSuccess: function () {},
+              onFailure: function (code, message) {
+                console.error("Tidal Escape request failed:", code, message);
+              }
+            });
+          });
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"><div id="tidal-loading" role="status">Tidal is loading</div></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>

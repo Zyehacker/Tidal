@@ -1,0 +1,56 @@
+TIDAL PROPRIETARY SOURCE-VIEWING LICENSE
+Version 1.0 — 2026
+Maintained by Graphine Studios
+
+This is a custom proprietary source-viewing license. It is not an open-source
+license and is not approved by the Open Source Initiative (OSI).
+
+1. Scope and source access
+
+The source is publicly visible so that people may inspect and learn what the
+project contains. Viewing the public repository is permitted, including the
+technical copies needed to access and view it through GitHub and its platform
+features as permitted by GitHub's Terms of Service.
+
+This license applies only to material for which Graphine Studios holds the
+relevant rights or has sufficient written authorization to grant these terms,
+and only to the extent of those rights. It does not claim that Graphine
+Studios owns every line of code or every project asset.
+
+2. No general reuse permission
+
+For material covered by this license, no general permission is granted to
+copy, reproduce, modify, adapt, redistribute, sublicense, publish, sell,
+commercially exploit, or create derivative works or projects. No permission
+is granted to use covered Tidal source code in another launcher, client, mod,
+application, or product.
+
+Any permission beyond repository viewing requires prior written authorization
+from the relevant rights holder. This license does not grant rights in
+material held by someone else.
+
+3. Contributor rights and attribution
+
+Names in CREDITS.md acknowledge contributors; they do not imply a copyright
+assignment, transfer of ownership, or agreement to these terms. No
+contributor's work is represented as owned by Graphine Studios or bound by
+this license without that contributor's written agreement or other sufficient
+written authorization from the relevant rights holder.
+
+No written contributor authorization was provided for verification as part of
+this update. Until the applicable authorization is obtained, the rights to
+such contributions remain with their respective rights holders, and this
+license does not purport to restrict or license those rights. Permission for
+use of that material must be obtained from its relevant rights holder.
+
+4. Notices and reserved rights
+
+Copyright and attribution notices must not be removed or misrepresented,
+subject to applicable law. Graphine Studios reserves rights only in material
+for which it is the rights holder or is authorized to act. All rights not
+expressly granted by the relevant rights holder remain reserved.
+
+Nothing in this license prohibits an exception, limitation, or other right
+that applicable law makes non-waivable or does not permit the relevant rights
+holder to restrict. GitHub's Terms of Service and permissions required for
+public repository hosting and platform features remain respected.

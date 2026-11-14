@@ -1,0 +1,51 @@
+/*
+ * tidal — proprietary source-viewing license
+ * maintained by graphine studios
+ * see LICENSE and CREDITS.md for licensing and attribution.
+ *
+ * provided here for inspection only.
+ * this notice does not claim ownership of other contributors' material.
+ * no general permission is granted by graphine studios to reuse, copy,
+ * modify, redistribute or create derivative works from this file.
+ */
+
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+}
+
+version = '1.0.0-beta'
+group = 'cc.tidal'
+base {
+    archivesName = 'tidal-26.3'
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        tidal {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${mc_26_3}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${loader_26_3}"
+    clientImplementation "net.fabricmc.fabric-api:fabric-api:0.160.3+26.3"
+}
+
+sourceSets {
+    client {
+        java {
+            exclude 'cc/tidal/tidal/TidalCef*.java', 'org/cef/**'
+        }
+    }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
