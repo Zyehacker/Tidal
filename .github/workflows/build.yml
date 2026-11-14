@@ -14,13 +14,14 @@ on:
       - '**'
     tags:
       - 'v*'
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
   group: tidal-build-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
 
 jobs:
   build:
@@ -31,7 +32,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mc: ['1.21.11', '26.2']
+        include:
+          - mc: '1.21.11'
+            java_release: 21
+          - mc: '26.2'
+            java_release: 25
 
     steps:
       - name: Check out repository
@@ -52,8 +57,52 @@ jobs:
         with:
           cache-provider: basic
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Build Tidal for ${{ matrix.mc }}
         run: ./gradlew --no-daemon :fabric:${{ matrix.mc }}:build
+
+      - name: Verify built jar targets Java ${{ matrix.java_release }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "fabric/${{ matrix.mc }}/build/libs"
+          jar=$(ls *.jar | grep -vE -- '-(sources|dev|javadoc)\.jar$' | head -n1)
+          max=${{ matrix.java_release }}
+          echo "Checking $jar (must not target above Java $max)"
+
+          # 1. Mixin compatibility level must not exceed the target JVM
+          for cfg in $(unzip -Z1 "$jar" | grep -E '\.mixins\.json$' || true); do
+            level=$(unzip -p "$jar" "$cfg" \
+              | grep -oE '"compatibilityLevel"[[:space:]]*:[[:space:]]*"JAVA_[0-9]+"' \
+              | grep -oE '[0-9]+' || true)
+            if [ -z "$level" ]; then
+              echo "::notice::$cfg has no compatibilityLevel"
+              continue
+            fi
+            echo "$cfg -> JAVA_$level"
+            if [ "$level" -gt "$max" ]; then
+              echo "::error::$cfg requires JAVA_$level but this target runs on Java $max"
+              exit 1
+            fi
+          done
+
+          # 2. Class file version must not exceed the target JVM (Java N = major N+44)
+          limit=$((max + 44))
+          tmp="$RUNNER_TEMP/jarcheck"
+          rm -rf "$tmp"
+          unzip -q "$jar" 'cc/tidal/*' -d "$tmp" || { echo "::error::No cc/tidal classes found in $jar"; exit 1; }
+          bad=0
+          while IFS= read -r f; do
+            major=$(od -An -tu1 -j7 -N1 "$f" | tr -d ' ')
+            if [ "$major" -gt "$limit" ]; then
+              echo "::error::${f#$tmp/} has class version $major (max $limit)"
+              bad=1
+            fi
+          done < <(find "$tmp" -name '*.class')
+          [ "$bad" -eq 0 ]
+          echo "OK: all classes <= $limit, mixin levels <= JAVA_$max"
 
       - name: Upload ${{ matrix.mc }} mod JAR
         uses: actions/upload-artifact@v7
@@ -72,6 +121,7 @@ jobs:
     needs: build
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
 
@@ -83,12 +133,29 @@ jobs:
           merge-multiple: true
           path: release
 
-      - name: Create GitHub release
+      - name: Create checksums
+        working-directory: release
+        run: |
+          ls -l
+          sha256sum *.jar > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Create or update GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          ls -l release
-          gh release create "$GITHUB_REF_NAME" release/*.jar \
-            --repo "$GITHUB_REPOSITORY" \
-            --title "Tidal $GITHUB_REF_NAME" \
-            --generate-notes
+          set -euo pipefail
+          flags=()
+          # Tags with a hyphen (v1.0.0-beta.2) are published as pre-releases
+          case "$GITHUB_REF_NAME" in *-*) flags+=(--prerelease) ;; esac
+
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" release/* --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" release/* \
+              --title "Tidal $GITHUB_REF_NAME" \
+              --generate-notes \
+              --verify-tag \
+              "${flags[@]}"
+          fi
