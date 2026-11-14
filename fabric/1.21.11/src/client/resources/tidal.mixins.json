@@ -3,7 +3,7 @@
   "package": "cc.tidal.tidal.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
-    "LightmapRenderStateExtractorMixin",
+    "LightTextureMixin",
     "TidalFontTextureMixin",
     "TidalMouseInputMixin",
     "TidalCameraZoomMixin",

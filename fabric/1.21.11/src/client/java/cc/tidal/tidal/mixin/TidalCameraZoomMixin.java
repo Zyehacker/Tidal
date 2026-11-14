@@ -14,22 +14,23 @@ package cc.tidal.tidal.mixin;
 import cc.tidal.tidal.TidalModule;
 import cc.tidal.tidal.TidalModules;
 import net.minecraft.client.Camera;
-import net.minecraft.client.renderer.state.level.CameraRenderState;
+import net.minecraft.client.renderer.GameRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(Camera.class)
+@Mixin(GameRenderer.class)
 public abstract class TidalCameraZoomMixin {
-    @Inject(method = "extractRenderState", at = @At("TAIL"))
-    private void tidal$applyZoom(CameraRenderState state, float partialTick,
-                                 CallbackInfo callback) {
+    @Inject(method = "getFov(Lnet/minecraft/client/Camera;FZ)F",
+            at = @At("RETURN"), cancellable = true)
+    private void tidal$applyZoom(Camera camera, float partialTick, boolean useFovSettings,
+                                 CallbackInfoReturnable<Float> callback) {
         TidalModule zoom = TidalModules.byId("zoom");
-        if (zoom == null || !zoom.enabled || state.projectionMatrix == null) return;
-        float fieldOfViewScale = Math.max(0.1f, Math.min(1.0f, zoom.intensity / 100.0f));
-        float projectionScale = 1.0f / fieldOfViewScale;
-        state.projectionMatrix.scale(projectionScale, projectionScale, 1.0f);
-        state.hudFov *= fieldOfViewScale;
+        if (zoom == null || !zoom.enabled) return;
+        double fieldOfViewScale = Math.max(0.1, Math.min(1.0, zoom.intensity / 100.0));
+        double halfFov = Math.toRadians(callback.getReturnValue() * 0.5);
+        callback.setReturnValue((float) Math.toDegrees(
+                2.0 * Math.atan(Math.tan(halfFov) * fieldOfViewScale)));
     }
 }

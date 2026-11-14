@@ -38,6 +38,16 @@ public final class TidalModManagerVerifier {
                 "Normalized traversal mod icon path was accepted");
         require(!TidalModManager.isSafeIconPath("C:/outside.png"),
                 "Absolute mod icon path was accepted");
+        require(!TidalModManager.isSafeIconPath("C:outside.png"),
+                "Drive-relative mod icon path was accepted");
+        require(!TidalModManager.isSafeIconPath("/outside.png"),
+                "Rooted mod icon path was accepted");
+        require(!TidalModManager.isSafeIconPath("\\outside.png"),
+                "Rooted Windows mod icon path was accepted");
+        require(!TidalModManager.isSafeIconPath("//server/share/icon.png"),
+                "UNC mod icon path was accepted");
+        require(!TidalModManager.isSafeIconPath("\\\\server\\share\\icon.png"),
+                "Windows UNC mod icon path was accepted");
         require(!TidalModManager.isSafeIconPath("icons\\outside.png"),
                 "Backslash mod icon path was accepted");
         require(!TidalModManager.isSafeIconPath(""),

@@ -26,7 +26,7 @@ public abstract class TidalMouseInputMixin {
     private void tidal$countHudClicks(long window, MouseButtonInfo button, int action,
                                       CallbackInfo callback) {
         Minecraft client = Minecraft.getInstance();
-        if (action == 1 && client.player != null && client.gui.screen() == null) {
+        if (action == 1 && client.player != null && client.screen == null) {
             TidalData.recordMouseClick(button.button());
         }
     }

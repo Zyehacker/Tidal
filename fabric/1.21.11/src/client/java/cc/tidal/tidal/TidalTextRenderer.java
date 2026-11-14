@@ -16,7 +16,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.textures.FilterMode;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.resources.Identifier;
@@ -58,12 +58,12 @@ final class TidalTextRenderer {
 
     private TidalTextRenderer() {}
 
-    static void draw(GuiGraphicsExtractor graphics, Font fallback, String text,
+    static void draw(GuiGraphics graphics, Font fallback, String text,
                      float x, int y, int color) {
         draw(graphics, fallback, text, x, y, color, false);
     }
 
-    static void draw(GuiGraphicsExtractor graphics, Font fallback, String text,
+    static void draw(GuiGraphics graphics, Font fallback, String text,
                      float x, int y, int color, boolean bold) {
         if (TidalConfig.uiTextShadow && !drawingShadow) {
             drawingShadow = true;
@@ -92,7 +92,7 @@ final class TidalTextRenderer {
                 pose.pushMatrix();
                 pose.translate((float) (Math.round(cursor * scaleX) / scaleX - textX),
                         (float) (Math.round(y * scaleY) / scaleY - textY));
-                graphics.text(fallback, missing, textX, textY, color, false);
+                graphics.drawString(fallback, missing, textX, textY, color, false);
                 pose.popMatrix();
                 cursor += layout.advances[index] / (float) scaleX;
                 continue;

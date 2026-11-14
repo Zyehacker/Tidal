@@ -12,7 +12,7 @@
 package cc.tidal.tidal;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
 
@@ -27,7 +27,7 @@ final class TidalWatermark {
                 || screenName.equals("DeathScreen");
     }
 
-    static void render(GuiGraphicsExtractor graphics) {
+    static void render(GuiGraphics graphics) {
         Minecraft client = Minecraft.getInstance();
         int x = 10;
         int y = client.getWindow().getGuiScaledHeight() - 31;

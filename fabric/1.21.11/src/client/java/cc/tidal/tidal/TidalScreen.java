@@ -14,7 +14,7 @@ package cc.tidal.tidal;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
@@ -326,7 +326,7 @@ public final class TidalScreen extends Screen {
     private void createSidebarWidgets() {
         int y = menuY + 78;
         addMainNavigationButton("Edit HUD", () ->
-                minecraft.gui.setScreen(new TidalHudEditorScreen(this)), false, y);
+                minecraft.setScreen(new TidalHudEditorScreen(this)), false, y);
         y += 26;
         addMainNavigationButton("Modules", () -> switchTab(Tab.MODULES),
                 tab == Tab.MODULES, y);
@@ -460,7 +460,7 @@ public final class TidalScreen extends Screen {
                         gridColumnX(0), gridY,
                         gridColumnWidth(0), 76, firstMod, TidalModManager::requestToggle,
                         entry -> TidalModManager.openSettings(entry, this),
-                        entry -> minecraft.gui.setScreen(new TidalModDetailsScreen(this, entry)));
+                        entry -> minecraft.setScreen(new TidalModDetailsScreen(this, entry)));
                 modCards.add(addRenderableWidget(card));
             }
 
@@ -475,7 +475,7 @@ public final class TidalScreen extends Screen {
                 gridX + TidalUi.CARD_CONTENT_INSET, gridY + 145, 208,
                 FOOTER_CONTROL_HEIGHT, "Liquid Glass gallery",
                 TidalUi.ActionButton.Style.CONTROL,
-                () -> minecraft.gui.setScreen(new LiquidGlassGalleryScreen(this))));
+                () -> minecraft.setScreen(new LiquidGlassGalleryScreen(this))));
         createSettingsControls();
         createHudControls();
         createCosmeticsControls();
@@ -497,7 +497,7 @@ public final class TidalScreen extends Screen {
         int width = Math.max(1, Math.min(400, gridWidth - 16));
         addHudControl(new TidalUi.ActionButton(x, gridY + 109, width, 30,
                 "Open HUD editor", TidalUi.ActionButton.Style.PRIMARY,
-                () -> minecraft.gui.setScreen(new TidalHudEditorScreen(this))), HudSection.LAYOUTS);
+                () -> minecraft.setScreen(new TidalHudEditorScreen(this))), HudSection.LAYOUTS);
         addHudControl(new TidalUi.CheckOption(x, gridY + 151, width, 28,
                 "Snap to grid", "select", TidalConfig.snapToGrid, () -> {
             TidalConfig.snapToGrid = !TidalConfig.snapToGrid;
@@ -611,17 +611,17 @@ public final class TidalScreen extends Screen {
                 }), SettingsSection.GRAPHICS);
         addSettingsControl(new TidalUi.ActionButton(x, gridY + 169, width, 30,
                 "Open Minecraft video and FOV settings", TidalUi.ActionButton.Style.CONTROL,
-                () -> minecraft.gui.setScreen(
-                        new OptionsScreen(this, minecraft.options, false))),
+                () -> minecraft.setScreen(
+                        new OptionsScreen(this, minecraft.options))),
                 SettingsSection.GRAPHICS);
         addSettingsControl(new TidalUi.ActionButton(x, gridY + 109, width, 30,
                 "Open Minecraft keybinds", TidalUi.ActionButton.Style.CONTROL,
-                () -> minecraft.gui.setScreen(
+                () -> minecraft.setScreen(
                         new net.minecraft.client.gui.screens.options.controls.ControlsScreen(
                                 this, minecraft.options))), SettingsSection.INPUT);
         addSettingsControl(new TidalUi.ActionButton(x, gridY + 145, width, 30,
                 "Search and rebind Tidal modules", TidalUi.ActionButton.Style.PRIMARY,
-                () -> minecraft.gui.setScreen(new TidalKeybindScreen(this))),
+                () -> minecraft.setScreen(new TidalKeybindScreen(this))),
                 SettingsSection.INPUT);
     }
 
@@ -715,7 +715,7 @@ public final class TidalScreen extends Screen {
         editHudButton = addRenderableWidget(new TidalUi.ActionButton(gridX + 98,
                 footerControlY, 82, FOOTER_CONTROL_HEIGHT, "Edit HUD",
                 TidalUi.ActionButton.Style.PRIMARY,
-                () -> minecraft.gui.setScreen(new TidalHudEditorScreen(this))));
+                () -> minecraft.setScreen(new TidalHudEditorScreen(this))));
         resetButton = addRenderableWidget(new TidalUi.ActionButton(gridX,
                 footerControlY, 120, FOOTER_CONTROL_HEIGHT, "Reset modules",
                 TidalUi.ActionButton.Style.CENTERED,
@@ -1242,7 +1242,7 @@ public final class TidalScreen extends Screen {
     }
 
     @Override
-    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    public void render(GuiGraphics graphics, int mouseX, int mouseY,
                                    float delta) {
         TidalMotion.beginFrame();
         float progress = transitionProgress();
@@ -1373,7 +1373,7 @@ public final class TidalScreen extends Screen {
             TidalUi.label(graphics, font, detail, gridX + 4,
                     gridY + 8 + font.lineHeight + 3, TidalUi.MUTED);
         }
-        super.extractRenderState(graphics, mouseX, mouseY, delta);
+        super.render(graphics, mouseX, mouseY, delta);
         if ((tab == Tab.HUD && hudSection == HudSection.ELEMENTS
                 || tab == Tab.MODULES || tab == Tab.MODS) && pageCount > 1) {
             TidalUi.centeredLabel(graphics, font, footerPageLabel,
@@ -1386,7 +1386,7 @@ public final class TidalScreen extends Screen {
         TidalUi.setFrameAlpha(1.0f);
     }
 
-    private static void drawRoundedSkinHead(GuiGraphicsExtractor graphics, Identifier texture,
+    private static void drawRoundedSkinHead(GuiGraphics graphics, Identifier texture,
                                             int x, int y, int size) {
         graphics.blit(RenderPipelines.GUI_TEXTURED, texture, x, y, 8, 8,
                 size, size, 8, 8, 64, 64, 0xFFFFFFFF);
@@ -1405,7 +1405,7 @@ public final class TidalScreen extends Screen {
         }
     }
 
-    private void drawCosmeticsPage(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    private void drawCosmeticsPage(GuiGraphics graphics, int mouseX, int mouseY,
                                    float delta) {
         String title = cosmeticsSection.label;
         String subtitle = switch (cosmeticsSection) {
@@ -1452,7 +1452,8 @@ public final class TidalScreen extends Screen {
                 living.yRot = previewRotation;
                 living.xRot = 0.0f;
             }
-            graphics.entity(renderState, previewZoom, new Vector3f(0.0f, 0.0f, 0.0f),
+            graphics.submitEntityRenderState(renderState, previewZoom,
+                    new Vector3f(0.0f, 0.0f, 0.0f),
                     new Quaternionf().rotateZ((float) Math.PI), new Quaternionf(),
                     skinPreviewX + 8, skinPreviewY + 22,
                     skinPreviewX + skinPreviewWidth - 8,
@@ -1468,7 +1469,7 @@ public final class TidalScreen extends Screen {
         }
     }
 
-    private void drawSectionIntro(GuiGraphicsExtractor graphics, String title, String detail) {
+    private void drawSectionIntro(GuiGraphics graphics, String title, String detail) {
         TidalUi.strongLabel(graphics, font, title, gridX + 4, gridY + 8, TidalUi.PRIMARY);
         TidalUi.label(graphics, font, TidalUi.fitText(font, detail,
                 Math.max(0, gridWidth - 8)), gridX + 4, gridY + 26, TidalUi.SECONDARY);
@@ -1483,7 +1484,7 @@ public final class TidalScreen extends Screen {
         return closingAt == 0 ? eased : 1.0f - eased;
     }
 
-    private void drawStaticCategory(GuiGraphicsExtractor graphics) {
+    private void drawStaticCategory(GuiGraphics graphics) {
         int contentX = gridX + TidalUi.CARD_CONTENT_INSET;
         String title = settingsSection.label;
         String description = switch (settingsSection) {
@@ -1523,7 +1524,7 @@ public final class TidalScreen extends Screen {
     public void tick() {
         super.tick();
         if (closingAt != 0 && TidalUi.nowMillis() - closingAt >= TRANSITION_MILLIS) {
-            minecraft.gui.setScreen(returnScreen);
+            minecraft.setScreen(returnScreen);
         }
     }
 
@@ -1662,7 +1663,7 @@ public final class TidalScreen extends Screen {
     @Override
     public void onClose() {
         TidalConfig.save();
-        minecraft.gui.setScreen(returnScreen);
+        minecraft.setScreen(returnScreen);
     }
 
     private final class Inspector extends AbstractWidget {
@@ -1704,7 +1705,7 @@ public final class TidalScreen extends Screen {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             if (progress > 0.02f || requestedOpen) {
                 graphics.nextStratum();
@@ -1737,7 +1738,7 @@ public final class TidalScreen extends Screen {
             }
         }
 
-        private void drawDetails(GuiGraphicsExtractor graphics, int renderX,
+        private void drawDetails(GuiGraphics graphics, int renderX,
                                  int mouseX, int mouseY) {
             int x = renderX + INSPECTOR_INSET;
             int y = getY() + 9;
@@ -1805,7 +1806,7 @@ public final class TidalScreen extends Screen {
                     TidalUi.SECONDARY);
         }
 
-        private void drawControl(GuiGraphicsExtractor graphics, int x, int y, int width,
+        private void drawControl(GuiGraphics graphics, int x, int y, int width,
                                  int height, String label, boolean hovered, boolean focused) {
             TidalUi.drawAsset(graphics, focused ? "buttons/button-secondary-pressed"
                             : hovered ? "buttons/button-secondary-hover"
@@ -1821,7 +1822,7 @@ public final class TidalScreen extends Screen {
                     TidalUi.PRIMARY);
         }
 
-        private void drawInspectorAction(GuiGraphicsExtractor graphics, int x, int y,
+        private void drawInspectorAction(GuiGraphics graphics, int x, int y,
                                          String icon, boolean active,
                                          int mouseX, int mouseY) {
             boolean hovered = mouseX >= x && mouseX < x + 22

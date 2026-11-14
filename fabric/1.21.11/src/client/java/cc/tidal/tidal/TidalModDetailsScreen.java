@@ -16,7 +16,7 @@ import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.metadata.ModDependency;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Util;
@@ -99,7 +99,7 @@ final class TidalModDetailsScreen extends Screen {
                 entry.favorite ? "Remove favorite" : "Add favorite",
                 TidalUi.ActionButton.Style.CONTROL, () -> {
             TidalModManager.setFavorite(entry, !entry.favorite);
-            Minecraft.getInstance().gui.setScreen(parent);
+            Minecraft.getInstance().setScreen(parent);
         }));
         if (entry.canOpenSettings()) {
             addRenderableWidget(new TidalUi.ActionButton(x + actionWidth + gap, y,
@@ -118,7 +118,7 @@ final class TidalModDetailsScreen extends Screen {
                         FabricLoader.getInstance().getGameDir().resolve("mods").toFile())));
         addRenderableWidget(new TidalUi.ActionButton(width - 112, 16, 88, 26,
                 "Back", TidalUi.ActionButton.Style.QUIET,
-                () -> Minecraft.getInstance().gui.setScreen(parent)));
+                () -> Minecraft.getInstance().setScreen(parent)));
     }
 
     private void copy(String value) {
@@ -130,7 +130,7 @@ final class TidalModDetailsScreen extends Screen {
     }
 
     @Override
-    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    public void render(GuiGraphics graphics, int mouseX, int mouseY,
                                    float delta) {
         TidalUi.panel(graphics, 12, 12, width - 24, height - 24,
                 TidalTheme.SURFACE, TidalTheme.Radius.WINDOW);
@@ -146,7 +146,7 @@ final class TidalModDetailsScreen extends Screen {
                     24, y, TidalUi.SECONDARY);
             y += font.lineHeight + 5;
         }
-        super.extractRenderState(graphics, mouseX, mouseY, delta);
+        super.render(graphics, mouseX, mouseY, delta);
     }
 
     @Override

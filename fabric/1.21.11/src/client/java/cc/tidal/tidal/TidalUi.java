@@ -13,7 +13,7 @@ package cc.tidal.tidal;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Tooltip;
@@ -90,12 +90,12 @@ final class TidalUi {
 
     static float frameAlpha() { return frameAlpha; }
 
-    static void drawAsset(GuiGraphicsExtractor graphics, String path, int x, int y,
+    static void drawAsset(GuiGraphics graphics, String path, int x, int y,
                           int width, int height) {
         drawAsset(graphics, path, x, y, width, height, 0xFFFFFFFF);
     }
 
-    static void drawIcon(GuiGraphicsExtractor graphics, String name, int x, int y, int tint) {
+    static void drawIcon(GuiGraphics graphics, String name, int x, int y, int tint) {
         String polyGlassIcon = polyGlassUiIcon(name);
         drawAsset(graphics, polyGlassIcon == null ? "icons/" + name : polyGlassIcon,
                 x, y, 16, 16, tint);
@@ -106,7 +106,7 @@ final class TidalUi {
         return "tidal/modules/" + type + "/" + module.id;
     }
 
-    static void drawAsset(GuiGraphicsExtractor graphics, String path, int x, int y,
+    static void drawAsset(GuiGraphics graphics, String path, int x, int y,
                           int width, int height, int tint) {
         if (width <= 0 || height <= 0) return;
         tint = withOpacity(tint, frameAlpha);
@@ -155,7 +155,7 @@ final class TidalUi {
         return (int) Math.round(logicalCoordinate * deviceScale);
     }
 
-    private static void drawAssetDevice(GuiGraphicsExtractor graphics,
+    private static void drawAssetDevice(GuiGraphics graphics,
                                         LiquidGlassAssets.Asset asset,
                                         net.minecraft.resources.Identifier texture,
                                         int x, int y, int width, int height, int tint) {
@@ -202,7 +202,7 @@ final class TidalUi {
         }
     }
 
-    private static void blitAssetSlice(GuiGraphicsExtractor graphics,
+    private static void blitAssetSlice(GuiGraphics graphics,
                                        net.minecraft.resources.Identifier texture,
                                        int textureWidth, int textureHeight,
                                        int u, int v, int sourceWidth, int sourceHeight,
@@ -212,7 +212,7 @@ final class TidalUi {
                 sourceWidth, sourceHeight, textureWidth, textureHeight, tint);
     }
 
-    static void panel(GuiGraphicsExtractor graphics, int x, int y, int width, int height,
+    static void panel(GuiGraphics graphics, int x, int y, int width, int height,
                       int color, int radius) {
         if (width <= 0 || height <= 0) return;
         if (radius <= 1 || width < 22 || height < 22) {
@@ -226,11 +226,11 @@ final class TidalUi {
         drawAsset(graphics, "tidal/ui/polyglass_module_card", x, y, width, height);
     }
 
-    static void cleanCard(GuiGraphicsExtractor graphics, int x, int y, int width, int height) {
+    static void cleanCard(GuiGraphics graphics, int x, int y, int width, int height) {
         cleanCard(graphics, x, y, width, height, false);
     }
 
-    static void cleanCard(GuiGraphicsExtractor graphics, int x, int y, int width, int height,
+    static void cleanCard(GuiGraphics graphics, int x, int y, int width, int height,
                           boolean hovered) {
         drawAsset(graphics, hovered ? "tidal/ui/polyglass_card_hover"
                         : "tidal/ui/polyglass_card",
@@ -265,7 +265,7 @@ final class TidalUi {
         };
     }
 
-    static void borderedPanel(GuiGraphicsExtractor graphics, int x, int y, int width, int height,
+    static void borderedPanel(GuiGraphics graphics, int x, int y, int width, int height,
                               int color, int radius, boolean focused) {
         panel(graphics, x, y, width, height, color, radius);
         drawAsset(graphics, focused ? "borders/focus-ring-r8"
@@ -274,7 +274,7 @@ final class TidalUi {
                 withAlpha(focused ? BORDER_FOCUS : BORDER_ELEVATED, 180));
     }
 
-    static void label(GuiGraphicsExtractor graphics, Font font, String text, int x, int y,
+    static void label(GuiGraphics graphics, Font font, String text, int x, int y,
                       int color) {
         TidalTextRenderer.draw(graphics, font, text, x, y, color);
     }
@@ -317,13 +317,13 @@ final class TidalUi {
         return displayName.toString();
     }
 
-    static void centeredLabel(GuiGraphicsExtractor graphics, Font font, String text,
+    static void centeredLabel(GuiGraphics graphics, Font font, String text,
                               int centerX, int y, int color) {
         TidalTextRenderer.draw(graphics, font, text,
                 centerX - textWidth(font, text) / 2.0f, y, color);
     }
 
-    static int wrappedLabel(GuiGraphicsExtractor graphics, Font font, String text,
+    static int wrappedLabel(GuiGraphics graphics, Font font, String text,
                             int x, int y, int width, int color) {
         int boundedWidth = Math.max(1, width);
         if (!text.equals(wrappedText) || boundedWidth != wrappedWidth) {
@@ -367,7 +367,7 @@ final class TidalUi {
         return List.copyOf(lines);
     }
 
-    static void strongLabel(GuiGraphicsExtractor graphics, Font font, String text, int x, int y,
+    static void strongLabel(GuiGraphics graphics, Font font, String text, int x, int y,
                             int color) {
         TidalTextRenderer.draw(graphics, font, text, x, y, color, true);
     }
@@ -381,7 +381,7 @@ final class TidalUi {
                 value -> Component.literal(value).withStyle(ChatFormatting.BOLD));
     }
 
-    static void sectionHeader(GuiGraphicsExtractor graphics, Font font, String title,
+    static void sectionHeader(GuiGraphics graphics, Font font, String title,
                               String detail, int x, int y, int width) {
         int textY = y + Math.max(0, (18 - font.lineHeight) / 2);
         label(graphics, font, title, x + 4, textY, PRIMARY);
@@ -480,7 +480,7 @@ final class TidalUi {
         }
 
         @Override
-        public void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+        public void renderWidget(GuiGraphics graphics, int mouseX, int mouseY,
                                              float delta) {
             String state = !active ? "disabled" : error ? "error" : isFocused() ? "focused"
                     : isMouseOver(mouseX, mouseY) ? "hover" : "normal";
@@ -560,7 +560,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             hover = TidalMotion.approach(hover,
                     active && isHoveredOrFocused() ? 1.0f : 0.0f, 14.0f);
@@ -629,7 +629,7 @@ final class TidalUi {
                             ? mix(ERROR, PRIMARY, hover * 0.35f) : mix(color, PRIMARY, hover));
         }
 
-        private void drawButtonSurface(GuiGraphicsExtractor graphics) {
+        private void drawButtonSurface(GuiGraphics graphics) {
             if (style == Style.NAVIGATION) {
                 if (highlightProgress > 0.01f) {
                     drawAsset(graphics, "tidal/ui/nav_pill_active", getX(), getY(),
@@ -855,7 +855,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             hover = TidalMotion.approach(hover,
                     active && isHoveredOrFocused() ? 1.0f : 0.0f, 14.0f);
@@ -912,7 +912,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             hover = TidalMotion.approach(hover,
                     active && isHoveredOrFocused() ? 1.0f : 0.0f, 14.0f);
@@ -977,7 +977,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             Font font = net.minecraft.client.Minecraft.getInstance().font;
             pressedProgress = TidalMotion.approach(pressedProgress, 0.0f, 22.0f);
@@ -1044,7 +1044,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             Font font = net.minecraft.client.Minecraft.getInstance().font;
             int[] colors = colors();
@@ -1117,7 +1117,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             Font font = net.minecraft.client.Minecraft.getInstance().font;
             int current = Math.max(minimum, Math.min(maximum, value.getAsInt()));
@@ -1186,7 +1186,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             hover = TidalMotion.approach(hover, isHoveredOrFocused() ? 1.0f : 0.0f, 14.0f);
             selectedProgress = TidalMotion.approach(selectedProgress,
@@ -1339,7 +1339,7 @@ final class TidalUi {
         }
 
         @Override
-        protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+        protected void renderWidget(GuiGraphics graphics, int mouseX,
                                                 int mouseY, float delta) {
             boolean cardHovered = mouseX >= getX() && mouseX < getRight()
                     && mouseY >= getY() && mouseY < getBottom();

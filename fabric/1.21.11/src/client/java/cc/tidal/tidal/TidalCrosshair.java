@@ -12,16 +12,16 @@
 package cc.tidal.tidal;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 /** Client-only replacement for the vanilla crosshair. */
 final class TidalCrosshair {
     private TidalCrosshair() {}
 
-    static void render(GuiGraphicsExtractor graphics) {
+    static void render(GuiGraphics graphics) {
         Minecraft client = Minecraft.getInstance();
-        if (client.player == null || client.gui.screen() != null
-                || client.gui.hud.isHidden() || !client.options.getCameraType().isFirstPerson()) {
+        if (client.player == null || client.screen != null
+                || client.options.hideGui || !client.options.getCameraType().isFirstPerson()) {
             return;
         }
 
@@ -86,7 +86,7 @@ final class TidalCrosshair {
                 TidalConfig.crosshairColor);
     }
 
-    private static void drawSquare(GuiGraphicsExtractor graphics, int centerX, int centerY,
+    private static void drawSquare(GuiGraphics graphics, int centerX, int centerY,
                                    int halfSize, int thickness, int color) {
         int left = centerX - halfSize;
         int right = centerX + halfSize + 1;

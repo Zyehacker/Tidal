@@ -11,7 +11,7 @@
 
 package cc.tidal.tidal;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.screens.LevelLoadingScreen;
 import net.minecraft.client.gui.screens.Screen;
@@ -39,7 +39,7 @@ final class TidalLoadingOverlay extends AbstractWidget {
     }
 
     @Override
-    protected void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX,
+    protected void renderWidget(GuiGraphics graphics, int mouseX,
                                             int mouseY, float delta) {
         float alpha = 1.0f;
         if (loadingScreen instanceof LevelLoadingScreen levelLoading

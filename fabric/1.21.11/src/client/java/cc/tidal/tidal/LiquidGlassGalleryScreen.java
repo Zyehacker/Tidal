@@ -11,7 +11,7 @@
 
 package cc.tidal.tidal;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -84,9 +84,9 @@ final class LiquidGlassGalleryScreen extends Screen {
     }
 
     @Override
-    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    public void render(GuiGraphics graphics, int mouseX, int mouseY,
                                    float delta) {
-        if (TidalTheme.Glass.BLUR_RADIUS > 0) extractBlurredBackground(graphics);
+        if (TidalTheme.Glass.BLUR_RADIUS > 0) renderBlurredBackground(graphics);
         TidalMotion.beginFrame();
         TidalUi.drawAsset(graphics, "tidal/ui/polyglass_window_frame", galleryX, galleryY,
                 galleryWidth, galleryHeight,
@@ -114,10 +114,10 @@ final class LiquidGlassGalleryScreen extends Screen {
         }
         if (hasScrollbar) drawScrollbar(graphics, mouseX);
         graphics.disableScissor();
-        super.extractRenderState(graphics, mouseX, mouseY, delta);
+        super.render(graphics, mouseX, mouseY, delta);
     }
 
-    private void drawScrollbar(GuiGraphicsExtractor graphics, int mouseX) {
+    private void drawScrollbar(GuiGraphics graphics, int mouseX) {
         int trackX = contentX + contentWidth - 6;
         int totalRows = (assets.size() + COLUMNS - 1) / COLUMNS;
         int visibleRows = Math.max(1, contentHeight / (TILE_HEIGHT + TILE_GAP));
@@ -144,7 +144,7 @@ final class LiquidGlassGalleryScreen extends Screen {
         calculateScroll();
     }
 
-    private void drawTile(GuiGraphicsExtractor graphics, LiquidGlassAssets.Asset asset,
+    private void drawTile(GuiGraphics graphics, LiquidGlassAssets.Asset asset,
                           int x, int y, int tileWidth) {
         TidalUi.drawAsset(graphics, "surfaces/tooltip", x, y, tileWidth, TILE_HEIGHT);
         TidalUi.label(graphics, font,
@@ -225,7 +225,7 @@ final class LiquidGlassGalleryScreen extends Screen {
     }
 
     private void returnToParent() {
-        minecraft.gui.setScreen(parent);
+        minecraft.setScreen(parent);
     }
 
     @Override

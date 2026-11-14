@@ -21,15 +21,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.resources.Identifier;
-import net.minecraft.util.ARGB;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -271,11 +268,13 @@ final class LiquidGlassAssets {
             NativeImage image = new NativeImage(NativeImage.Format.RGBA,
                     key.width, key.height, false);
             try {
-                int[] pixels = ((DataBufferInt) rendered.getRaster()
+                int[] pixels = ((java.awt.image.DataBufferInt) rendered.getRaster()
                         .getDataBuffer()).getData();
-                for (int i = 0; i < pixels.length; i++) pixels[i] = ARGB.toABGR(pixels[i]);
-                image.getPixelBytes().order(ByteOrder.nativeOrder())
-                        .asIntBuffer().put(pixels);
+                for (int y = 0, index = 0; y < key.height; y++) {
+                    for (int x = 0; x < key.width; x++, index++) {
+                        image.setPixel(x, y, pixels[index]);
+                    }
+                }
                 return image;
             } catch (RuntimeException | Error exception) {
                 image.close();

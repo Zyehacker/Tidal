@@ -12,7 +12,7 @@
 package cc.tidal.tidal;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -861,7 +861,7 @@ public final class TidalHudEditorScreen extends Screen {
     }
 
     @Override
-    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    public void render(GuiGraphics graphics, int mouseX, int mouseY,
                                    float delta) {
         TidalMotion.beginFrame();
         graphics.fill(12, 12, Math.max(12, width - 12), Math.max(12, height - 12),
@@ -894,7 +894,7 @@ public final class TidalHudEditorScreen extends Screen {
             drawInspectorSection(graphics, "LAYOUT", 378 + layoutShift(), panelHeight);
         }
 
-        super.extractRenderState(graphics, mouseX, mouseY, delta);
+        super.render(graphics, mouseX, mouseY, delta);
         for (TidalModule module : selection) {
             int selectionX = TidalHud.x(module, width);
             int selectionY = TidalHud.y(module, height);
@@ -923,7 +923,7 @@ public final class TidalHudEditorScreen extends Screen {
         }
     }
 
-    private void drawInspectorSection(GuiGraphicsExtractor graphics, String title, int y,
+    private void drawInspectorSection(GuiGraphics graphics, String title, int y,
                                       int panelHeight) {
         int visibleY = panelY + y - panelScrollOffset;
         if (visibleY < panelY + 48
@@ -942,6 +942,6 @@ public final class TidalHudEditorScreen extends Screen {
         dragging = false;
         resizing = false;
         TidalConfig.save();
-        minecraft.gui.setScreen(parent);
+        minecraft.setScreen(parent);
     }
 }

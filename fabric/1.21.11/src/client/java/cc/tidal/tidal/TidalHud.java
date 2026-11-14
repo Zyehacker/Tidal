@@ -12,7 +12,7 @@
 package cc.tidal.tidal;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,11 +32,11 @@ public final class TidalHud {
     private static final int[] SEEN_SURFACE_GROUPS = new int[MODULES.size()];
     private TidalHud() {}
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft client = Minecraft.getInstance();
-        if (!TidalConfig.hudEnabled || client.player == null || client.gui.hud.isHidden()) return;
-        if (client.gui.screen() instanceof TidalHudEditorScreen
-                || client.gui.screen() instanceof TidalScreen) return;
+        if (!TidalConfig.hudEnabled || client.player == null || client.options.hideGui) return;
+        if (client.screen instanceof TidalHudEditorScreen
+                || client.screen instanceof TidalScreen) return;
         TidalData.recordFrame();
         int width = client.getWindow().getGuiScaledWidth();
         int height = client.getWindow().getGuiScaledHeight();
@@ -54,9 +54,9 @@ public final class TidalHud {
         }
     }
 
-    static void renderEditorPreview(GuiGraphicsExtractor graphics, TidalModule module) {
+    static void renderEditorPreview(GuiGraphics graphics, TidalModule module) {
         Minecraft client = Minecraft.getInstance();
-        if (client.player == null || client.gui.hud.isHidden()) return;
+        if (client.player == null || client.options.hideGui) return;
         int width = client.getWindow().getGuiScaledWidth();
         int height = client.getWindow().getGuiScaledHeight();
         updateFrameValues(module, client);
@@ -94,7 +94,7 @@ public final class TidalHud {
         }
     }
 
-    private static void renderModule(GuiGraphicsExtractor graphics, Minecraft client,
+    private static void renderModule(GuiGraphics graphics, Minecraft client,
                                      TidalModule module, String value, int index,
                                      int viewportWidth, int viewportHeight,
                                      boolean drawSurface) {
@@ -124,7 +124,7 @@ public final class TidalHud {
         pose.popMatrix();
     }
 
-    private static void renderKeystrokes(GuiGraphicsExtractor graphics, Minecraft client,
+    private static void renderKeystrokes(GuiGraphics graphics, Minecraft client,
                                          TidalModule module, int viewportWidth,
                                          int viewportHeight) {
         int scaledWidth = (int) Math.ceil(KEYSTROKES_WIDTH * module.scale);
@@ -147,7 +147,7 @@ public final class TidalHud {
         pose.popMatrix();
     }
 
-    private static void drawKey(GuiGraphicsExtractor graphics, Minecraft client,
+    private static void drawKey(GuiGraphics graphics, Minecraft client,
                                 TidalModule module, String label, int x, int y,
                                 int width, int height, int key) {
         boolean pressed = TidalData.inputDown(key);
@@ -160,7 +160,7 @@ public final class TidalHud {
                 pressed ? TidalTheme.PRIMARY : module.textColor);
     }
 
-    private static void drawMouseKey(GuiGraphicsExtractor graphics, Minecraft client,
+    private static void drawMouseKey(GuiGraphics graphics, Minecraft client,
                                      TidalModule module, String label, int x, int y,
                                      int width, int height, int button) {
         int key = button == 0 ? TidalData.KEY_LMB : TidalData.KEY_RMB;
@@ -176,7 +176,7 @@ public final class TidalHud {
                 x + width / 2, y + 13, textColor);
     }
 
-    private static void drawMergedSurfaces(GuiGraphicsExtractor graphics, Minecraft client,
+    private static void drawMergedSurfaces(GuiGraphics graphics, Minecraft client,
                                            int viewportWidth, int viewportHeight,
                                            TidalModule preview, String[] values) {
         int seenCount = 0;
@@ -225,7 +225,7 @@ public final class TidalHud {
                 && (module.enabled || module == preview);
     }
 
-    private static void drawBackground(GuiGraphicsExtractor graphics, TidalModule module,
+    private static void drawBackground(GuiGraphics graphics, TidalModule module,
                                        int width, int height) {
         float opacity = module.backgroundOpacity / 100.0f;
         int background = TidalUi.withOpacity(module.backgroundColor, opacity);

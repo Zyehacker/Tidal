@@ -14,7 +14,7 @@ package cc.tidal.tidal;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
@@ -58,10 +58,10 @@ public final class TidalClient implements ClientModInitializer {
             restoreVisualOverrides(client);
             if (aquaIntegration != null) aquaIntegration.close();
         });
-        openDrawer = KeyMappingHelper.registerKeyMapping(new KeyMapping(
+        openDrawer = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.tidal.open_drawer", InputConstants.Type.KEYSYM,
                 InputConstants.KEY_RSHIFT, CATEGORY));
-        openHudEditor = KeyMappingHelper.registerKeyMapping(new KeyMapping(
+        openHudEditor = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.tidal.open_hud_editor", InputConstants.Type.KEYSYM,
                 InputConstants.KEY_H, CATEGORY));
 
@@ -71,18 +71,18 @@ public final class TidalClient implements ClientModInitializer {
                     || screenName.equals("LevelLoadingScreen")) {
                 TidalLoadingOverlay overlay =
                         new TidalLoadingOverlay(scaledWidth, scaledHeight, screen);
-                ScreenEvents.afterExtract(screen).register((currentScreen, graphics, mouseX,
+                ScreenEvents.afterRender(screen).register((currentScreen, graphics, mouseX,
                                                             mouseY, tickProgress) ->
-                        overlay.extractRenderState(graphics, mouseX, mouseY, tickProgress));
+                        overlay.render(graphics, mouseX, mouseY, tickProgress));
             }
             if (TidalWatermark.supports(screenName)) {
-                ScreenEvents.afterExtract(screen).register((currentScreen, graphics, mouseX,
+                ScreenEvents.afterRender(screen).register((currentScreen, graphics, mouseX,
                                                             mouseY, tickProgress) ->
                         TidalWatermark.render(graphics));
             }
             if (screen instanceof TitleScreen || screen instanceof PauseScreen) {
                 int buttonWidth = 92;
-                Screens.getWidgets(screen).add(new TidalUi.ActionButton(
+                Screens.getButtons(screen).add(new TidalUi.ActionButton(
                         Math.max(8, scaledWidth - buttonWidth - 12), 8,
                         buttonWidth, 24, "TIDAL",
                         TidalUi.ActionButton.Style.CONTROL,
@@ -102,19 +102,19 @@ public final class TidalClient implements ClientModInitializer {
                 for (TidalAquaIntegration.NotificationEvent event
                         : aquaIntegration.drainNotifications(client.player.getUUID())) {
                     net.minecraft.client.gui.components.toasts.SystemToast.add(
-                            client.gui.toastManager(),
+                            client.getToastManager(),
                             new net.minecraft.client.gui.components.toasts.SystemToast.SystemToastId(),
                             net.minecraft.network.chat.Component.literal(event.title()),
                             net.minecraft.network.chat.Component.literal(event.message()));
                 }
             }
             while (openHudEditor.consumeClick()) {
-                if (client.gui.screen() == null) {
-                    client.gui.setScreen(new TidalHudEditorScreen(null));
+                if (client.screen == null) {
+                    client.setScreen(new TidalHudEditorScreen(null));
                 }
             }
             while (openDrawer.consumeClick()) {
-                if (client.gui.screen() == null) {
+                if (client.screen == null) {
                     openTidal(client, null);
                 }
             }
@@ -123,7 +123,7 @@ public final class TidalClient implements ClientModInitializer {
             }
             TidalData.refreshInput(client);
             updateVisualOverrides(client);
-            if (client.gui.screen() == null) {
+            if (client.screen == null) {
                 for (TidalModule module : TidalModules.all()) {
                     if (!module.implemented || module.keyCode == 0) continue;
                     boolean down = module.keyCode < 0
@@ -152,13 +152,13 @@ public final class TidalClient implements ClientModInitializer {
                     if (crosshair != null && crosshair.enabled) {
                         TidalCrosshair.render(graphics);
                     } else {
-                        vanilla.extractRenderState(graphics, deltaTracker);
+                        vanilla.render(graphics, deltaTracker);
                     }
                 });
     }
 
     private static void openTidal(Minecraft client, Screen previousScreen) {
-        client.gui.setScreen(new TidalScreen(previousScreen));
+        client.setScreen(new TidalScreen(previousScreen));
     }
 
     static TidalAquaIntegration.AccountStatus aquaAccountStatus() {

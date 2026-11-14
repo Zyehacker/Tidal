@@ -12,7 +12,7 @@
 package cc.tidal.tidal;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.KeyEvent;
@@ -60,7 +60,7 @@ final class TidalKeybindScreen extends Screen {
         }));
         addRenderableWidget(new TidalUi.ActionButton(width - 112, height - 38, 88, 26,
                 "Done", TidalUi.ActionButton.Style.PRIMARY,
-                () -> minecraft.gui.setScreen(parent)));
+                () -> minecraft.setScreen(parent)));
         TidalModules.all().stream().filter(module -> module.implemented)
                 .sorted(Comparator.comparing((TidalModule module) -> module.group.name())
                         .thenComparing(module -> module.name, String.CASE_INSENSITIVE_ORDER))
@@ -148,7 +148,7 @@ final class TidalKeybindScreen extends Screen {
     }
 
     @Override
-    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    public void render(GuiGraphics graphics, int mouseX, int mouseY,
                                    float delta) {
         TidalUi.panel(graphics, 12, 12, width - 24, height - 24,
                 TidalTheme.SURFACE, TidalTheme.Radius.WINDOW);
@@ -157,7 +157,7 @@ final class TidalKeybindScreen extends Screen {
         TidalUi.label(graphics, font,
                 "Click a row and press a key. Press Esc or Backspace to unbind.",
                 24, 62, TidalUi.SECONDARY);
-        super.extractRenderState(graphics, mouseX, mouseY, delta);
+        super.render(graphics, mouseX, mouseY, delta);
     }
 
     @Override
@@ -171,7 +171,7 @@ final class TidalKeybindScreen extends Screen {
             return true;
         }
         if (event.key() == GLFW.GLFW_KEY_ESCAPE) {
-            minecraft.gui.setScreen(parent);
+            minecraft.setScreen(parent);
             return true;
         }
         return super.keyPressed(event);

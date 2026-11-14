@@ -78,7 +78,7 @@ public final class TidalModule {
             case "frame_time" -> "Shows the measured time between rendered frames.";
             case "ping" -> "Shows server latency; hidden in single-player.";
             case "memory_usage" -> "Shows used and maximum Java heap memory.";
-            case "fullbright" -> "Brightens the 26.2 lightmap without changing saved gamma; intensity is configurable.";
+            case "fullbright" -> "Brightens the world lightmap without changing saved gamma; intensity is configurable.";
             case "custom_crosshair" -> "Replaces the vanilla crosshair with a configurable client-side reticle.";
             case "view_bobbing" -> "Temporarily disables vanilla view bobbing while enabled.";
             case "server_address" -> "Shows the connected multiplayer server address.";

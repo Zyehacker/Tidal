@@ -94,11 +94,11 @@ public final class TidalData {
         memory = String.format(Locale.ROOT, "%d / %d MB",
                 usedMemory / 1_048_576L, RUNTIME.maxMemory() / 1_048_576L);
         if (client.level != null) {
-            long dayTime = client.level.getOverworldClockTime() % 24000L;
+            long dayTime = client.level.getDayTime() % 24000L;
             int hour = (int) ((dayTime / 1000L + 6L) % 24L);
             int minute = (int) (dayTime % 1000L * 60L / 1000L);
             inGameClock = String.format(java.util.Locale.ROOT, "%02d:%02d", hour, minute);
-            dayCounter = Long.toString(client.level.getOverworldClockTime() / 24000L + 1);
+            dayCounter = Long.toString(client.level.getDayTime() / 24000L + 1);
         } else {
             inGameClock = dayCounter = "";
         }
@@ -285,7 +285,7 @@ public final class TidalData {
     }
 
     public static void refreshInput(Minecraft client) {
-        if (client.player == null || client.gui.screen() != null) {
+        if (client.player == null || client.screen != null) {
             inputState = 0;
             return;
         }

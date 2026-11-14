@@ -160,7 +160,7 @@ final class TidalModManager {
                 entry.settingsFailure = "Settings unavailable";
                 return false;
             }
-            Minecraft.getInstance().gui.setScreen(screen);
+            Minecraft.getInstance().setScreen(screen);
             return true;
         } catch (Exception | LinkageError exception) {
             LOGGER.error("Could not open settings for mod {}", entry.id, exception);
@@ -229,7 +229,11 @@ final class TidalModManager {
     }
 
     static boolean isSafeIconPath(String relative) {
-        if (relative == null || relative.isBlank() || relative.indexOf('\\') >= 0) return false;
+        if (relative == null || relative.isBlank()) return false;
+        char first = relative.charAt(0);
+        boolean hasDrivePrefix = relative.length() >= 2 && relative.charAt(1) == ':'
+                && ((first >= 'A' && first <= 'Z') || (first >= 'a' && first <= 'z'));
+        if (first == '/' || relative.indexOf('\\') >= 0 || hasDrivePrefix) return false;
         try {
             Path path = Path.of(relative).normalize();
             return !path.isAbsolute() && !path.startsWith("..") && !path.toString().isBlank()
