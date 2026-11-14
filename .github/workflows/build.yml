@@ -12,6 +12,8 @@ on:
   push:
     branches:
       - '**'
+    tags:
+      - 'v*'
 
 permissions:
   contents: read
@@ -29,11 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - mc: '1.21.11'
-            java: '21'
-          - mc: '26.2'
-            java: '25'
+        mc: ['1.21.11', '26.2']
 
     steps:
       - name: Check out repository
@@ -41,11 +39,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Java ${{ matrix.java }}
+      - name: Set up Java 21 and 25
         uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: ${{ matrix.java }}
+          java-version: |
+            21
+            25
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
@@ -66,3 +66,29 @@ jobs:
             !fabric/${{ matrix.mc }}/build/libs/*-javadoc.jar
           if-no-files-found: error
           retention-days: 14
+
+  release:
+    name: Publish release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all JARs
+        uses: actions/download-artifact@v8
+        with:
+          pattern: tidal-*
+          merge-multiple: true
+          path: release
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls -l release
+          gh release create "$GITHUB_REF_NAME" release/*.jar \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Tidal $GITHUB_REF_NAME" \
+            --generate-notes
